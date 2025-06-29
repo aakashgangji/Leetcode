@@ -23,5 +23,5 @@ def helper(nums):
         r2=temp
     return r2
 
-nums = [2,3,2]
+nums = [7,3,4,5,2]
 print(rob(nums))
