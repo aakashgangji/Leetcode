@@ -27,7 +27,7 @@
 # Input: nums = [1,1,1,3,3,4,3,2,4,2]
 
 # Output: true
-
+from typing import List
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
         hashset= set()
@@ -37,3 +37,6 @@ class Solution:
                 return True
             hashset.add(n)
         return False
+
+nums=   [1,2,3,1]
+print(Solution().containsDuplicate(nums))  # Output: True

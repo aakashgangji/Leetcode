@@ -16,7 +16,7 @@
 
 # Input: nums = [3,3], target = 6
 # Output: [0,1]
-
+from typing import List
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         hashmap={} #value:index
@@ -26,4 +26,6 @@ class Solution:
                 return(hashmap[diff],i)
             hashmap[a]=i
         return
-        
+nums = [2,7,11,15]
+target = 9
+print(Solution().twoSum(nums, target))  # Output: [0, 1
