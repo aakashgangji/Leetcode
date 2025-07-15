@@ -41,5 +41,5 @@ def findOrder(self, numCourses: int, prerequisites: List[List[int]]) -> List[int
     return output
 
 numCourses = 4
-prerequisites = [[1,0],[2,0],[3,1],[3,2]]
+prerequisites = [[1,0],[2,0],[3,1]]
 print(findOrder(None,numCourses,prerequisites))
