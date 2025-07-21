@@ -39,3 +39,7 @@ def validTree(self, n: int, edges: List[List[int]]) -> bool:
 n = 5
 edges = [[0, 1], [0, 2], [0, 3], [1, 4]]
 print(validTree(None,n,edges))
+
+n = 5
+edges = [[0, 1], [1, 2], [2, 3], [1, 3], [1, 4]]
+print(validTree(None,n,edges))
