@@ -9,8 +9,8 @@ Output: 11
 """
 
 def getSum(a,b):
-    max_int=0x7FFFFFFFF
-    mask=0xFFFFFFFF
+    max_int=0x7FFFFFFF #7NumberOf F's
+    mask=0xFFFFFFFF     #8NumberOf F's
     while b !=0:
         xor=(a^b)&mask
         carry=((a&b)<<1)&mask
