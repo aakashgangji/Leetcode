@@ -13,14 +13,21 @@ from typing import List
 import heapq
 class Solution:
     def findKthLargest(self, nums: List[int], k: int) -> int:
-        minheap=[-i for i in nums]
-        heapq.heapify(minheap)
-
-        while k>0:
-            val=heapq.heappop(minheap)
-            val=(-val)
-            k-=1
-        return (val)
+        k=len(nums)-k
+        def quickselect(l,r):
+            pivot,p=nums[r],l
+            for i in range(l,r):
+                if nums[i]<=pivot:
+                    nums[p],nums[i]=nums[i],nums[p]
+                    p+=1
+            nums[p],nums[r]=nums[r],nums[p]
+            if p>k:
+                return quickselect(l,p-1)
+            if p<k:
+                return quickselect(p+1,r)
+            else:
+                return nums[p]
+        return quickselect(0,len(nums)-1)
 
 
 
