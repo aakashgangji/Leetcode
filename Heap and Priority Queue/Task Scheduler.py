@@ -42,3 +42,7 @@ tasks = ["A","A","A","B","B","B"]
 n = 2
 sol=Solution()
 print(sol.leastInterval(tasks,n))
+tasks=["A","A","A","B","B","C","C"]
+n=1
+sol=Solution()
+print(sol.leastInterval(tasks,n))
