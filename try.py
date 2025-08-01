@@ -46,3 +46,4 @@ p=TreeNode(1,TreeNode(2))
 q=TreeNode(1,TreeNode(None,TreeNode(2)))
 print(isSameTree(p,q))
 
+and
