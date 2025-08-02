@@ -33,3 +33,5 @@ class Solution:
             if level:
                 res.append(level)
         return res
+    
+    root= TreeNode(1,(TreeNode 2))
