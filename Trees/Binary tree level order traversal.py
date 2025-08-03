@@ -34,4 +34,3 @@ class Solution:
                 res.append(level)
         return res
     
-    root= TreeNode(1,(TreeNode 2))
