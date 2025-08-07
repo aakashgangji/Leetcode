@@ -54,8 +54,13 @@ class MedianFinder:
     
 medianFinder = MedianFinder()
 print(medianFinder.addNum(1))
+print("Small Heap:", [-x for x in medianFinder.small]) 
+print("Large Heap:", [-x for x in medianFinder.large]) 
 print(medianFinder.addNum(2))
-
+print("Small Heap:", [-x for x in medianFinder.small]) 
+print("Large Heap:", [-x for x in medianFinder.large]) 
 print(medianFinder.findMedian())
 print(medianFinder.addNum(3))
+print("Small Heap:", [-x for x in medianFinder.small]) 
+print("Large Heap:", [-x for x in medianFinder.large]) 
 print(medianFinder.findMedian())
