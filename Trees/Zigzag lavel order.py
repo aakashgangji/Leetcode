@@ -1,3 +1,15 @@
+'''
+Input: root = [3,9,20,null,null,15,7]
+Output: [[3],[20,9],[15,7]]
+
+Input: root = [1]
+Output: [[1]]
+
+Input: root = []
+Output: []
+
+'''
+
 # Definition for a binary tree node.
 # class TreeNode:
 #     def __init__(self, val=0, left=None, right=None):
