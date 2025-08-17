@@ -42,5 +42,8 @@ class Solution:
         for r in range(m):
             for c in range(n):
                 res = max(res, dfs(r, c))
-        
         return res
+    
+matrix = [[9,9,4],[6,6,8],[2,1,1]]
+sol=Solution()
+print(sol.longestIncreasingPath(matrix))
