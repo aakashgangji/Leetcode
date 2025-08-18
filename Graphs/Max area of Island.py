@@ -11,7 +11,7 @@
 # Example 2:
 # Input: grid = [[0,0,0,0,0,0,0,0]]
 # Output: 0
-
+from typing import List
 class Solution:
     def maxAreaOfIsland(self, grid: List[List[int]]) -> int:
         visit=set()
@@ -27,3 +27,7 @@ class Solution:
             for c in range(cols):
                 area=max(area,dfs(r,c))
         return area
+    
+grid = [[0,0,1,0,0,0,0,1,0,0,0,0,0],[0,0,0,0,0,0,0,1,1,1,0,0,0],[0,1,1,0,1,0,0,0,0,0,0,0,0],[0,1,0,0,1,1,0,0,1,0,1,0,0],[0,1,0,0,1,1,0,0,1,1,1,0,0],[0,0,0,0,0,0,0,0,0,0,1,0,0],[0,0,0,0,0,0,0,1,1,1,0,0,0],[0,0,0,0,0,0,0,1,1,0,0,0,0]]
+sol=Solution()
+print(sol.maxAreaOfIsland(grid))
