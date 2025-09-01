@@ -1,6 +1,6 @@
 # NeetCode 150 Challenge
 
-Welcome to my personal LeetCode journey! 🚀  
+Welcome to my personal LeetCode journey! 
 This repository contains solutions to the **NeetCode 150 problems on LeetCode and NeetCode**, covering a broad spectrum of data structures and algorithms, all implemented in **Python**.
 
 ---
