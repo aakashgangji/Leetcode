@@ -21,6 +21,7 @@ The vowels are: 'a' (frequency 3), 'e' ( frequency 2), 'i' (frequency 2). The ma
 There are no consonants in s. Hence, maximum consonant frequency = 0.
 The output is 3 + 0 = 3.
 """
+from collections import Counter
 class Solution:
     def maxFreqSum(self, s: str) -> int:
         cnt=Counter(s)
@@ -35,4 +36,10 @@ class Solution:
                 if f>max_c:
                     max_c=f
         return max_v+max_c
+
+sol=Solution()
+print(sol.maxFreqSum("successes"))
+print(sol.maxFreqSum("aeiaeia"))
+
+
 
