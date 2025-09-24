@@ -38,7 +38,7 @@ class Solution:
             res.append(str(n//d))
             n%=d
         return ''.join(res)
-        
-
-            
-
+numerator = 4
+denominator = 333
+sol=Solution()
+print(sol.fractionToDecimal(numerator,denominator))
