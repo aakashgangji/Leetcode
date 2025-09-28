@@ -31,6 +31,8 @@ In the fourth operation, select nums[3] and nums[4]. The array becomes [0, 0, 0,
 The minimum number of operations required is 4.
 The output is 4.
 """
+import bisect
+from typing import List
 class Solution:
   def minOperations(self, queries: List[List[int]]) -> int:
     p4 = [1]
