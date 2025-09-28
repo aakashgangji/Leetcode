@@ -32,21 +32,41 @@ The minimum number of operations required is 4.
 The output is 4.
 """
 class Solution:
-    def minOperations(self, queries: List[List[int]]) -> int:
-        def count_operations(l, r):
-            count = 0
-            nums = [i for i in range(l, r + 1)]
-            while any(num > 0 for num in nums):
-                nums.sort(reverse=True)
-                a = nums.pop(0)
-                b = nums.pop(0) if nums else 0
-                nums.append(a // 4)
-                nums.append(b // 4)
-                count += 1
-            return count
+  def minOperations(self, queries: List[List[int]]) -> int:
+    p4 = [1]
+    while p4[-1] <= 10**9:
+        p4.append(p4[-1] * 4)
+        
+    prefix_sums = [0] * len(p4)
+    for k in range(1, len(p4)):
+        count_in_range_k = p4[k] - p4[k-1]
+        ops_for_range_k = k * count_in_range_k
+        prefix_sums[k] = prefix_sums[k-1] + ops_for_range_k
+    
+    memo = {}
 
-        total_operations = 0
-        for l, r in queries:
-            total_operations += count_operations(l, r)
+    def F(n: int) -> int:
+        if n == 0:
+            return 0
+        if n in memo:
+            return memo[n]
 
-        return total_operations
+        K = bisect.bisect_right(p4, n)
+        
+        sum_full_ranges = prefix_sums[K-1]
+        
+        count_partial_range = n - p4[K-1] + 1
+        sum_partial_range = K * count_partial_range
+        
+        result = sum_full_ranges + sum_partial_range
+        memo[n] = result
+        return result
+
+    total_result = 0
+    for l, r in queries:
+        total_ops_in_range = F(r) - F(l - 1)
+        operations_for_query = (total_ops_in_range + 1) // 2
+        total_result += operations_for_query
+        
+    return total_result
+  
