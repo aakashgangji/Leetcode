@@ -19,22 +19,32 @@ The subarray starting at index 0 is [1, 2], which is strictly increasing.
 The subarray starting at index 2 is [3, 4], which is also strictly increasing.
 These two subarrays are adjacent, and 2 is the maximum possible value of k for which two such adjacent strictly increasing subarrays exist.
 """
+from typing import List
 class Solution:
     def maxIncreasingSubarrays(self, nums: List[int]) -> int:
         n = len(nums)
         if n < 2:
             return 0
         
-        inc = [0] * n
-        for i in range(1, n):
-            if nums[i] > nums[i - 1]:
-                inc[i] = inc[i - 1] + 1
-            else:
-                inc[i] = 0
+        incLen = [1] * n
+        for i in range(n - 2, -1, -1):
+            if nums[i] < nums[i + 1]:
+                incLen[i] = incLen[i + 1] + 1
         
+        def can_find(k: int) -> bool:
+            for start in range(n - 2 * k + 1):
+                if incLen[start] >= k and incLen[start + k] >= k:
+                    return True
+            return False
+        
+        left, right = 1, n // 2
         max_k = 0
-        for i in range(1, n):
-            if inc[i] > 0 and inc[i - 1] > 0:
-                max_k = max(max_k, min(inc[i], inc[i - 1]))
+        while left <= right:
+            mid = (left + right) // 2
+            if can_find(mid):
+                max_k = mid  # mid is possible, try for a larger k
+                left = mid + 1
+            else:
+                right = mid - 1
         
         return max_k
