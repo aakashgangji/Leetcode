@@ -10,6 +10,8 @@ Example 2
 Input: heightMap = [[3,3,3,3,3],[3,2,2,2,3],[3,2,1,2,3],[3,2,2,2,3],[3,3,3,3,3]]
 Output: 10
 """
+from typing import List
+import heapq
 class Solution:
     def trapRainWater(self, heightMap: List[List[int]]) -> int:
         if not heightMap or not heightMap[0]:
@@ -44,3 +46,7 @@ class Solution:
                     heapq.heappush(heap, (heightMap[nx][ny], nx, ny))
 
         return water_trapped
+    
+heightMap = [[3,3,3,3,3],[3,2,2,2,3],[3,2,1,2,3],[3,2,2,2,3],[3,3,3,3,3]]
+solution = Solution()
+print(solution.trapRainWater(heightMap))  # Output: 10
