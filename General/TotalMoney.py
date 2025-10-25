@@ -23,3 +23,5 @@ class Solution:
         # Money from the last incomplete week
         res += days * (weeks + 1) + days * (days - 1) // 2
         return res
+sol=Solution()
+print(sol.totalMoney(4))   # Output: 10
