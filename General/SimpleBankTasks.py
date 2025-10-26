@@ -26,6 +26,7 @@ bank.transfer(3, 4, 15); // return false, the current balance of account 3 is $1
                          // so it is invalid to transfer $15 from it.
 bank.withdraw(10, 50);   // return false, it is invalid because account 10 does not exist.
 """
+from typing import List
 class Bank:
 
     def __init__(self, balance: List[int]):
@@ -56,6 +57,12 @@ class Bank:
             return False
         self.balance[account - 1] -= money
         return True
+    
+sol = Bank([10, 100, 20, 50, 30])
+print(sol.withdraw(3, 10))    # return true, account 3 has a
+print(sol.transfer(5, 1, 20)) # return true, account 5 has a balance of $30, so it is valid to transfer $20.
+print(sol.deposit(5, 20))     # return true, it is valid to deposit
+
     
         
 
