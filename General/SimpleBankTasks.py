@@ -26,7 +26,7 @@ bank.transfer(3, 4, 15); // return false, the current balance of account 3 is $1
                          // so it is invalid to transfer $15 from it.
 bank.withdraw(10, 50);   // return false, it is invalid because account 10 does not exist.
 """
-from typing import List
+from typing import Listf
 class Bank:
 
     def __init__(self, balance: List[int]):
