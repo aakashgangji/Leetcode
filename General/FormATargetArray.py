@@ -36,3 +36,8 @@ class Solution:
             total_operations += height_increase
       
         return total_operations
+
+sol=Solution()
+print(sol.minNumberOperations([1,2,3,2,1]))  # Output: 3
+print(sol.minNumberOperations([3,1,1,2]))    # Output: 4
+print(sol.minNumberOperations([3,1,5,4,2]))    # Output: 7
