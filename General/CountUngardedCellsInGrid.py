@@ -13,6 +13,7 @@ Output: 4
 Explanation: The unguarded cells are shown in green in the above diagram.
 There are a total of 4 unguarded cells, so we return 4.
 """
+from typing import List
 class Solution:
     def countUnguarded(
         self, m: int, n: int, guards: List[List[int]], walls: List[List[int]]
@@ -48,3 +49,7 @@ class Solution:
         unguarded_count = sum(cell == 0 for row in grid for cell in row)
       
         return unguarded_count
+    
+sol=Solution()
+print(sol.countUnguarded(4, 6, [[0,0],[1,1],[2,3]], [[0,1],[2,2],[1,4]]))   
+print(sol.countUnguarded(3, 3, [[1,1]], [[0,1],[1,0],[2,1],[1,2]]))
