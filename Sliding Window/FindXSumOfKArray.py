@@ -112,3 +112,5 @@ class Solution:
                 add_element_to_sets(leftmost_element)
       
         return result
+sol=Solution()
+print(sol.findXSum([1,1,2,2,3,4,2,3], 6, 2))  # Output: [6,10,12]
