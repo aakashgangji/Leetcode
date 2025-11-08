@@ -41,4 +41,4 @@ class Solution:
                 ans.append(num)
         return ans
 Sol=Solution()
-print(Sol.findEvenNumbers([2,1,3,0])) 
+print(Sol.findEvenNumbers([2,1,3,0])) # Output: [102,120,130,132,210,230,302,310,312,320]
