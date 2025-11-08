@@ -25,3 +25,7 @@ class Solution:
             result ^= n
             n >>= 1
         return result
+
+sol=Solution()
+print(sol.minimumOneBitOperations(3))  # Output: 2
+print(sol.minimumOneBitOperations(6))  # Output: 4
