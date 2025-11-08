@@ -49,3 +49,9 @@ class Solution:
             mq=mask(lq)
             ans.append(vowel_map.get(mq,""))
         return ans
+
+sol=Solution()
+print(sol.spellchecker(["KiTe","kite","hare","Hare"], ["kite","Kite","KiTe","Hare","HARE","Hear","hear","keti","keet","keto"]))
+# Output: ["kite","KiTe","KiTe","Hare","hare","","","KiTe","","KiTe"]
+print(sol.spellchecker(["yellow"], ["YellOw"]))
+# Output: ["yellow"]
