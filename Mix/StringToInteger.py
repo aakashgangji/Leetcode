@@ -80,3 +80,7 @@ class Solution:
             i += 1
 
         return sign * result
+
+sol=Solution()
+print(sol.myAtoi("42"))            # Output: 42
+print(sol.myAtoi("   -042"))       # Output: -42
