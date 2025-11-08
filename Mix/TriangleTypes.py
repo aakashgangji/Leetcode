@@ -31,3 +31,6 @@ class Solution:
                 return "scalene"
         else:
             return "none"
+sol = Solution()
+print(sol.triangleType([3,3,3]))  # Output: "equilateral"
+print(sol.triangleType([3,4,5]))  # Output: "scalene"
