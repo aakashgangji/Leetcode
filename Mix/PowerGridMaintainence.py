@@ -111,3 +111,6 @@ class Solution:
                     is_online[x] = False
         
         return results
+sol=Solution()
+print(sol.processQueries(5, [[1,2],[2,3],[3,4],[4,5]], [[1,3],[2,1],[1,1],[2,2],[1,2]]))  # Output: [3,2,3]
+print(sol.processQueries(3, [], [[1,1],[2,1],[1,1]]))
