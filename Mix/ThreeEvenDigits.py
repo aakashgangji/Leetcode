@@ -40,3 +40,5 @@ class Solution:
             if of:
                 ans.append(num)
         return ans
+Sol=Solution()
+print(Sol.findEvenNumbers([2,1,3,0])) 
