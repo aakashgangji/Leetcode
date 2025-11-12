@@ -43,6 +43,8 @@ Explanation:
 
 There are no good tuples. Therefore, the answer is -1.
 """
+from collections import defaultdict
+from typing import List
 class Solution:
     def minimumDistance(self, nums: List[int]) -> int:
         index_map=defaultdict(list)
@@ -60,3 +62,9 @@ class Solution:
                     min_distance=min(min_distance,dist)
         
         return min_distance if min_distance!=float('inf') else -1
+
+
+sol=Solution()
+print(sol.minimumDistance([1,2,1,1,3]))
+print(sol.minimumDistance([1,1,2,3,2,1,2]))     
+print(sol.minimumDistance([1]))
