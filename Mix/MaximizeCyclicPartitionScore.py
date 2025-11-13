@@ -24,28 +24,73 @@ Output: 3
 Explanation:
 Identical to Example 1, we partition nums into [2, 3] and [3, 1]. Note that nums may be partitioned into fewer than k subarrays.
 """
+from typing import Tuple
 from typing import List
+
+class SegmentTree:
+    def __init__(self, data: List[int], func):
+        self.n = len(data)
+        self.func = func
+        self.size = 1
+        while self.size < self.n:
+            self.size <<= 1
+        self.tree = [0] * (2 * self.size)
+        for i in range(self.n):
+            self.tree[self.size + i] = data[i]
+        for i in range(self.size - 1, 0, -1):
+            self.tree[i] = func(self.tree[i << 1], self.tree[(i << 1) | 1])
+        
+    def query(self, left: int, right: int) -> int:
+        result = None
+        left += self.size
+        right += self.size
+        while left <= right:
+            if left & 1:
+                result = self.tree[left] if result is None else self.func(result, self.tree[left])
+                left += 1
+            if not (right & 1):
+                result = self.tree[right] if result is None else self.func(result, self.tree[right])
+                right -= 1
+            left >>= 1
+            right >>= 1
+        return result
+
+
 class Solution:
     def maximumScore(self, nums: List[int], k: int) -> int:
         n = len(nums)
-        nums = nums * 2  # Duplicate the array to handle cyclic nature
-        dp = [[float('-inf')] * (k + 1) for _ in range(2 * n + 1)]
-        dp[0][0] = 0
+        nums2 = nums * 2  
+        min_tree = SegmentTree(nums2, min)
+        max_tree = SegmentTree(nums2, max)
         
-        for i in range(1, 2 * n + 1):
-            current_max = float('-inf')
-            current_min = float('inf')
-            for j in range(i, 0, -1):
-                current_max = max(current_max, nums[j - 1])
-                current_min = min(current_min, nums[j - 1])
-                range_value = current_max - current_min
-                for p in range(1, k + 1):
-                    if dp[j - 1][p - 1] != float('-inf'):
-                        dp[i][p] = max(dp[i][p], dp[j - 1][p - 1] + range_value)
+        def range_min_max(l: int, r: int):
+            return min_tree.query(l, r), max_tree.query(l, r)
         
-        max_score = float('-inf')
-        for i in range(n, 2 * n + 1):
-            for p in range(1, k + 1):
-                max_score = max(max_score, dp[i][p])
+        result = 0
         
-        return max_score
+        for start in range(n):
+            
+            dp = [[float('-inf')] * (k + 1) for _ in range(n + 1)]
+            dp[0][0] = 0
+            
+            for i in range(n):
+                for parts in range(k):
+                    if dp[i][parts] == float('-inf'):
+                        continue
+                    for length in range(1, n - i + 1):
+                        end = start + i + length - 1
+                        seg_min, seg_max = range_min_max(end - length + 1, end)
+                        score = seg_max - seg_min
+                        if dp[i][parts] + score > dp[i + length][parts + 1]:
+                            dp[i + length][parts + 1] = dp[i][parts] + score
+            
+            for parts in range(1, k + 1):
+                result = max(result, dp[n][parts])
+        
+        return result
+sol=Solution()
+print(sol.maximumScore([1,2,3,3],2))  # Output:3
+print(sol.maximumScore([1,2,3,3],1))  # Output:2
+print(sol.maximumScore([1,2,3,3],4))  # Output:3
+print(sol.maximumScore([508882051,438704141,690816744,309083087,255949298,171618882,154132662,694584660,708267128,789067611,875112610,45802814,400568685,401850803,332220238,792292312,273160690,899127162,844501372,69916474,13058775,336901690,119923752,36817842,735793463,62311579,226559477,136468391,239577457,431985794,89905730,289900658,996939364,665092513,600645243,979117571,156930576,949027160,906228412,955927135,437541819,823746051,40587905,849012331,543157336,228197669,181715590,511971910],18))
+    
