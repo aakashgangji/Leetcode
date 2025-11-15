@@ -43,25 +43,37 @@ i	j	s[i..j]	Number of Zeros	Number of Ones
 1	5	01101	2	3
 """
 class Solution:
-  def numberOfSubstrings(self, s: str) -> int:
-    ans = 0
-    maxZero = (-1 + math.sqrt(1 + 4 * len(s))) // 2
-    for zero in range(int(maxZero) + 1):
-      lastInvalidPos = -1
-      count = [0, 0]
-      l = 0
-      for r, c in enumerate(s):
-        count[int(c)] += 1
-        while l < r:
-          if s[l] == '0' and count[0] > zero:
-            count[0] -= 1  # Remove an extra '0'.
-            lastInvalidPos = l
-            l += 1
-          elif s[l] == '1' and count[1] - 1 >= zero * zero:
-            count[1] -= 1  # Remove an extra '1'.
-            l += 1
-          else:
-            break  # Cannot remove more characters.
-        if count[0] == zero and count[1] >= zero * zero:
-            ans += l - lastInvalidPos
-    return ans
+    def numberOfSubstrings(self, s: str) -> int:
+        lens = len(s)
+        res = 0
+        i = 0
+        first1 = -1
+        while i < lens:
+            if s[i] == '1':
+                if first1 == -1:
+                    first1 = i
+                res += i - first1 + 1
+            else:
+                first1 = -1
+            i += 1
+        for zeroNum in range(1, int(sqrt(lens)) + 1):
+
+            zeroPos = deque([]) 
+            curZeroNum = 0
+            firstZeroI = -1
+            oneNum = 0          
+            for r in range(lens):
+                if s[r] == '0':
+                    zeroPos.append(r)
+                    curZeroNum += 1
+                    if curZeroNum > zeroNum:
+                        curZeroNum -= 1
+                        oneNum -= zeroPos[0] - firstZeroI - 1
+                        firstZeroI = zeroPos.popleft()
+                else:
+                    oneNum += 1
+                if curZeroNum == zeroNum and oneNum >= zeroNum ** 2:
+                    res += min(zeroPos[0] - firstZeroI, oneNum - zeroNum**2 + 1)
+        return res
+
+            
