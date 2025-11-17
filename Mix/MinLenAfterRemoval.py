@@ -37,3 +37,13 @@ Explanation:
 
 First, remove the substring "ab", leaving "aab". Next, remove the new substring "ab", leaving "a". No further removals are possible, so the minimum length is 1.©leetcode
 """
+class Solution:
+    def minLengthAfterRemovals(self, s: str) -> int:
+        count_a = s.count('a')
+        count_b = s.count('b')
+        return abs(count_a - count_b)
+    
+Solution=Solution()
+print(Solution.minLengthAfterRemovals("aabbab"))  # Output: 0
+print(Solution.minLengthAfterRemovals("aaaa"))    # Output: 4
+print(Solution.minLengthAfterRemovals("aaabb"))   # Output:
