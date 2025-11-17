@@ -27,79 +27,99 @@ allOne.inc("leet");
 allOne.getMaxKey(); // return "hello"
 allOne.getMinKey(); // return "leet"
 """
+class ListNode:
+    def __init__(self, frequency):
+        self.freq = frequency
+        self.previous = None
+        self.next = None
+        self.items = set()
+    
+    
 class AllOne:
-
     def __init__(self):
-        self.key_count = {}
-        self.count_keys = {}
-        self.min_count = None
-        self.max_count = None
-        
-    def inc(self, key: str) -> None:
-        if key in self.key_count:
-            old_count = self.key_count[key]
-            new_count = old_count + 1
-            self.key_count[key] = new_count
-            
-            self.count_keys[old_count].remove(key)
-            if not self.count_keys[old_count]:
-                del self.count_keys[old_count]
-                if self.min_count == old_count:
-                    self.min_count += 1
-            
-            if new_count not in self.count_keys:
-                self.count_keys[new_count] = set()
-            self.count_keys[new_count].add(key)
-            
-            if self.max_count is None or new_count > self.max_count:
-                self.max_count = new_count
-        else:
-            self.key_count[key] = 1
-            if 1 not in self.count_keys:
-                self.count_keys[1] = set()
-            self.count_keys[1].add(key)
-            
-            if self.min_count is None or self.min_count > 1:
-                self.min_count = 1
-            if self.max_count is None:
-                self.max_count = 1
-        
-    def dec(self, key: str) -> None:
-        if key in self.key_count:
-            old_count = self.key_count[key]
-            new_count = old_count - 1
-            
-            self.count_keys[old_count].remove(key)
-            if not self.count_keys[old_count]:
-                del self.count_keys[old_count]
-                if self.max_count == old_count:
-                    self.max_count -= 1
-                if self.min_count == old_count:
-                    self.min_count = new_count if new_count > 0 else None
-            
-            if new_count > 0:
-                self.key_count[key] = new_count
-                if new_count not in self.count_keys:
-                    self.count_keys[new_count] = set()
-                self.count_keys[new_count].add(key)
-                
-                if self.min_count is None or new_count < self.min_count:
-                    self.min_count = new_count
+        self.start = ListNode(0)  # Starting dummy node
+        self.end = ListNode(0)  # Ending dummy node
+        self.start.next = self.end  # Connect start to end
+        self.end.previous = self.start  # Connect end to start
+        self.lookup = {}  # Store item-node association
+    
+    def inc(self, item: str) -> None:
+        if item in self.lookup:
+            current = self.lookup[item]
+            current_freq = current.freq
+            current.items.remove(item)
+    
+            next_node = current.next
+            if next_node == self.end or next_node.freq != current_freq + 1:
+                new_node = ListNode(current_freq + 1)
+                new_node.items.add(item)
+                new_node.previous = current
+                new_node.next = next_node
+                current.next = new_node
+                next_node.previous = new_node
+                self.lookup[item] = new_node
             else:
-                del self.key_count[key]
-                if not self.key_count:
-                    self.min_count = None
-                    self.max_count = None
-
+                next_node.items.add(item)
+                self.lookup[item] = next_node
+                
+            if not current.items:
+                self.deleteNode(current)
+        else:
+            first_node = self.start.next
+            if first_node == self.end or first_node.freq > 1:
+                new_node = ListNode(1)
+                new_node.items.add(item)
+                new_node.previous = self.start
+                new_node.next = first_node
+                self.start.next = new_node
+                first_node.previous = new_node
+                self.lookup[item] = new_node
+            else:
+                first_node.items.add(item)
+                self.lookup[item] = first_node
+    
+    def dec(self, item: str) -> None:
+        if item not in self.lookup:
+            return
+    
+        current = self.lookup[item]
+        current.items.remove(item)
+        current_freq = current.freq
+    
+        if current_freq == 1:
+            del self.lookup[item]
+        else:
+            previous_node = current.previous
+            if previous_node == self.start or previous_node.freq != current_freq - 1:
+                new_node = ListNode(current_freq - 1)
+                new_node.items.add(item)
+                new_node.previous = previous_node
+                new_node.next = current
+                previous_node.next = new_node
+                current.previous = new_node
+                self.lookup[item] = new_node
+            else:
+                previous_node.items.add(item)
+                self.lookup[item] = previous_node
+    
+        if not current.items:
+            self.deleteNode(current)
+    
     def getMaxKey(self) -> str:
-        if self.max_count is None:
+        if self.end.previous == self.start:
             return ""
-        return next(iter(self.count_keys[self.max_count]))
-        
+        return next(iter(self.end.previous.items))
+    
     def getMinKey(self) -> str:
-        if self.min_count is None:
+        if self.start.next == self.end:
             return ""
-        return next(iter(self.count_keys[self.min_count]))
+        return next(iter(self.start.next.items))
+    
+    def deleteNode(self, node):
+        prev_node = node.previous
+        next_node = node.next
+        prev_node.next = next_node
+        next_node.previous = prev_node
         
 # Your AllOne object will be instantiated and called as such:
 # obj = AllOne()
