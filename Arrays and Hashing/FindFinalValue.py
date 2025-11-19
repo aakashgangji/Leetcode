@@ -27,6 +27,7 @@ Explanation:
 - 4 is not found in nums. Thus, 4 is returned.
 
 """
+from typing import List
 class Solution:
     def findFinalValue(self, nums: List[int], original: int) -> int:
         num_set = set(nums)
@@ -34,3 +35,5 @@ class Solution:
             original *= 2
         return original
         
+sol=Solution()
+print(sol.findFinalValue([5,3,6,1,12],3))  #Output: 24
