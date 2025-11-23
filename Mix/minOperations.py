@@ -25,30 +25,10 @@ Input: nums = [3,6,9]
 Output: 0
 """
 class Solution:
-    def minimumOperations(self, nums: List[int]) -> int:
-        count = [0, 0, 0]
-        
-        for num in nums:
-            count[num % 3] += 1
-        
-        operations = 0
-        
-        # Pair elements with remainder 1 and 2
-        pair_count = min(count[1], count[2])
-        operations += pair_count
-        count[1] -= pair_count
-        count[2] -= pair_count
-        
-        # Handle remaining elements with remainder 1
-        if count[1] > 0:
-            operations += (count[1] // 3) * 2
-            if count[1] % 3 != 0:
-                operations += 2
-        
-        # Handle remaining elements with remainder 2
-        if count[2] > 0:
-            operations += (count[2] // 3) * 2
-            if count[2] % 3 != 0:
-                operations += 2
-        
-        return operations
+  def minimumOperations(self, nums: list[int]) -> int:
+    return sum(num % 3 != 0 for num in nums)
+  
+# Example usage:
+solution = Solution()
+print(solution.minimumOperations([1, 2, 3, 4]))  # Output: 3
+print(solution.minimumOperations([3, 6, 9]))     # Output: 0
