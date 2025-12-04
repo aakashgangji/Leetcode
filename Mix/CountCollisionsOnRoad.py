@@ -49,3 +49,5 @@ class Solution:
       r -= 1
 
     return sum(c != 'S' for c in directions[l:r + 1])
+sol=Solution()
+print(sol.countCollisions("RLRSLL"))  # Expected output: 5
