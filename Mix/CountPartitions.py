@@ -47,3 +47,6 @@ All partitions result in an even sum difference.
 class Solution:
     def countPartitions(self, nums: List[int]) -> int:
         return len(nums) - 1 if sum(nums) % 2 == 0 else 0
+
+sol=Solution()
+print(sol.countPartitions([10,10,3,7,6]))  # Expected output: 4
