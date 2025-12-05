@@ -50,3 +50,5 @@ class Solution:
 
 sol=Solution()
 print(sol.countPartitions([10,10,3,7,6]))  # Expected output: 4
+print(sol.countPartitions([1,2,2]))        # Expected output: 0
+print(sol.countPartitions([2,4,6,8]))      # Expected output: 3
