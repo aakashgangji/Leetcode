@@ -26,4 +26,7 @@ class Solution:
                 if c <= n and c*c == c2:
                     count += 1
         return count
+sol=Solution()
+print(sol.countTriples(5))  # Output: 2
+print(sol.countTriples(10)) # Output: 4 
         
