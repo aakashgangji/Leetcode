@@ -10,3 +10,5 @@ class Solution:
         for i in range(1, len(complexity)):
             result = (result * i) % MOD
         return result
+sol=Solution()
+print(sol.countPermutations([1,2,3]))
