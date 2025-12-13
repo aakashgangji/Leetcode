@@ -54,3 +54,5 @@ class Solution:
         valid_coupons.sort()
         
         return [c for _, c in valid_coupons]
+sol=Solution()
+print(sol.validateCoupons(["SAVE20","","PHARMA5","SAVE@20"],["restaurant","grocery","pharmacy","restaurant"],[True,True,True,True]))
