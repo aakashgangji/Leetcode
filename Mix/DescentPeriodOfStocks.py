@@ -43,3 +43,7 @@ class Solution:
         total_periods += (descent_length * (descent_length + 1)) // 2
 
         return total_periods
+Solution=Solution()
+print(Solution.getDescentPeriods([3,2,1,4]))  # Output: 7
+print(Solution.getDescentPeriods([8,6,7,7]))  # Output: 4
+print(Solution.getDescentPeriods([1]))        # Output: 1
