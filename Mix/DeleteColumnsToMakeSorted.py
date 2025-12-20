@@ -49,5 +49,8 @@ class Solution:
                 if strs[row][col] < strs[row - 1][col]:
                     delete_count += 1
                     break
-                    
         return delete_count
+sol=Solution()
+print(sol.minDeletionSize(["cba","daf","ghi"]))  # Output: 1
+print(sol.minDeletionSize(["a","b"]))            # Output: 0
+print(sol.minDeletionSize(["zyx","wvu","tsr"]))  # Output: 3
