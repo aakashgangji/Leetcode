@@ -51,3 +51,5 @@ class Solution:
                 if A[row][col] < A[row + 1][col]:
                     sorted_pairs[row] = True
         return deleted_columns
+so=Solution()
+print(so.minDeletionSize(["ca","bb","ac"]))
