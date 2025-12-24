@@ -31,4 +31,5 @@ class Solution:
             if total_apples <= 0:
                 return boxes_used
         return boxes_used
-            
+S=Solution()
+print(S.minimumBoxes([1,3,2],[4,3,1,5,2]))  
