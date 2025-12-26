@@ -48,3 +48,7 @@ class Solution:
         ans = i + 1
 
     return ans
+s=Solution()
+print(s.bestClosingTime("YYNY"))  #2N and 'Y':  2
+print(s.bestClosingTime("NNNNN")) #0 0
+print(s.bestClosingTime("YYYY"))  #4    
