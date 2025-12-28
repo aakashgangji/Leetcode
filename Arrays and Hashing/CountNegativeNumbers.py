@@ -20,4 +20,5 @@ class Solution:
                 row += 1
         return count
 sol=Solution()
+print(sol.countNegatives([[3,2],[1,0]]))
 print(sol.countNegatives([[4,3,2,-1],[3,2,1,-1],[1,1,-1,-2],[-1,-1,-2,-3]]))
