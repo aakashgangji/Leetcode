@@ -19,3 +19,5 @@ class Solution:
             else:
                 row += 1
         return count
+sol=Solution()
+print(sol.countNegatives([[4,3,2,-1],[3,2,1,-1],[1,1,-1,-2],[-1,-1,-2,-3]]))
