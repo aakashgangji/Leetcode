@@ -68,6 +68,11 @@ class Solution:
                     count += 1
 
         return count
+s=Solution()
+print(s.numMagicSquaresInside([[4,3,8,4],[9,5,1,9],[2,7,6,2]]))  # Output: 1
+print(s.numMagicSquaresInside([[8]]))  # Output: 0  
+
+
 
 #or
 """
