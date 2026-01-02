@@ -26,4 +26,7 @@ class Solution:
                 return n
             numset.add(n)
             n+=1
-
+s=Solution()
+print(s.repeatedNTimes([1,2,3,3]))  # Output: 3
+print(s.repeatedNTimes([2,1,2,5,3,2]))  # Output: 2
+print(s.repeatedNTimes([5,1,5,2,5,3,5,4]))  # Output: 5
