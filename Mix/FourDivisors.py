@@ -39,3 +39,7 @@ class Solution:
             if count == 4:
                 ans += s
         return ans
+s=Solution()
+print(s.sumFourDivisors([21,4,7]))  # Output: 32
+print(s.sumFourDivisors([21,21]))  # Output: 64
+print(s.sumFourDivisors([1,2,3,4,5]))  # Output: 0
