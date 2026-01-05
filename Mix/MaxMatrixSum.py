@@ -41,3 +41,6 @@ class Solution:
             return total_sum
         else:
             return total_sum - 2 * min_abs_value
+s=Solution()
+print(s.maxMatrixSum([[1,-1],[-1,1]]))  # Output: 4
+print(s.maxMatrixSum([[1,2,3],[-1,-2,-3],[1,2,3]]))  # Output: 16
