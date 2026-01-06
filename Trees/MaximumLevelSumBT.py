@@ -47,3 +47,12 @@ class Solution:
             curr_level += 1
 
         return ans_level
+s=Solution()
+# Example usage:
+# Construct the binary tree [1,7,0,7,-8,null,null]
+root = TreeNode(1)
+root.left = TreeNode(7)
+root.right = TreeNode(0)
+root.left.left = TreeNode(7)
+root.left.right = TreeNode(-8)  
+print(s.maxLevelSum(root))  # Output: 2
