@@ -39,3 +39,8 @@ class Solution:
                                max(0, dp[i][j]) + A[i] * B[j])
 
     return dp[m][n]
+s=Solution()
+# Example usage:
+print(s.maxDotProduct([2,1,-2,5], [3,0,-6]))  # Output: 18
+print(s.maxDotProduct([3,-2], [2,-6,7]))    # Output: 21
+print(s.maxDotProduct([-1,-1], [1,1]))      # Output: -1
