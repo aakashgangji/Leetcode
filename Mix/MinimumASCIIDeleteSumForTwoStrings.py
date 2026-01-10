@@ -45,3 +45,6 @@ class Solution:
                         dp[i][j - 1] + ord(s2[j - 1])   # Delete from s2
                     )      
         return dp[len_s1][len_s2]
+S=Solution()
+print(S.minimumDeleteSum("sea", "eat"))  # Output: 231
+print(S.minimumDeleteSum("delete", "leet"))  # Output: 403      
