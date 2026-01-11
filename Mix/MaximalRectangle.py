@@ -41,3 +41,5 @@ class Solution:
             for i, height in enumerate(heights)
         )
         return max_area
+s=Solution()
+print(s.maximalRectangle([["1","0","1","0","0"],["1","0","1","1","1"],["1","1","1","1","1"],["1","0","0","1","0"]]))  # Output: 6       
