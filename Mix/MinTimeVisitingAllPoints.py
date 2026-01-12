@@ -24,6 +24,7 @@ Example 2:
 Input: points = [[3,2],[-2,2]]
 Output: 5
 """
+from typing import List
 class Solution:
     def minTimeToVisitAllPoints(self, points: List[List[int]]) -> int:
         total_time = 0
