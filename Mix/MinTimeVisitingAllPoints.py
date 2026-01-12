@@ -34,3 +34,6 @@ class Solution:
             dy = abs(y2 - y1)
             total_time += max(dx, dy)
         return total_time
+s=Solution()
+print(s.minTimeToVisitAllPoints([[1,1],[3,4],[-1,0]]))  # Output: 7
+print(s.minTimeToVisitAllPoints([[3,2],[-2,2]]))  # Output: 5
