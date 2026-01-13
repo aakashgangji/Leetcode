@@ -52,3 +52,6 @@ class Solution:
       area += areaGain
       width += l if isStart else -l
       prevY = y
+s = Solution()
+print(s.separateSquares([[0,0,1],[2,2,1]]))
+print(s.separateSquares([[0,0,2],[1,1,1]])) 
