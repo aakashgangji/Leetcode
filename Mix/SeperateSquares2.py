@@ -110,3 +110,6 @@ class Solution:
             tree.add(xl, xr, delta)
             prev_y = y
         return total_area
+s= Solution()
+print(s.separateSquares([[0,0,1],[2,2,1]]))
+print(s.separateSquares([[0,0,2],[1,1,1]]))
