@@ -60,3 +60,5 @@ class Solution:
             return ans + 1
 
         return min(f(hBars), f(vBars)) ** 2
+s=Solution()
+print(s.maximizeSquareHoleArea(2,1,[2,3],[2]))
