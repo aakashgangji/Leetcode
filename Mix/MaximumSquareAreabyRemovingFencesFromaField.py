@@ -71,3 +71,5 @@ class Solution:
                   for hGap in sorted(hGaps, reverse=True)
                   if hGap in vGaps), -1)
     return -1 if maxGap == -1 else maxGap**2 % (10**9 + 7)
+s=Solution()
+print(s.maximizeSquareArea(4,3,[2,3],[2]))
