@@ -36,3 +36,7 @@ class Solution:
           ans = max(ans, length + 1)
 
     return ans
+s=Solution()
+print(s.maxSideLength([[1,1,3,2,4,3,2],[1,1,3,2,4,3,2],[1,1,3,2,4,3,2]],4))  # Output: 2
+print(s.maxSideLength([[2,2,2,2,2],[2,2,2,2,2],[2,2,2,2,2],[2,2,2,2,2],[2,2,2,2,2]],1))  # Output: 0
+    
