@@ -41,3 +41,5 @@ class Solution:
     while (num & leadingOne) > 0:
       leadingOne <<= 1
     return leadingOne >> 1
+s=Solution()
+print(s.minBitwiseArray([2,3,5,7]))
