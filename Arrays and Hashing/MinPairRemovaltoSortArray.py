@@ -54,3 +54,6 @@ class Solution:
       ans += 1
 
     return ans
+s=Solution()
+print(s.minimumPairRemoval([5,2,3,1]))  
+print(s.minimumPairRemoval([1,2,2]))    
