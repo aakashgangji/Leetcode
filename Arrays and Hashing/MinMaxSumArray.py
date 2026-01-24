@@ -26,3 +26,6 @@ class Solution:
     def minPairSum(self, nums: list[int]) -> int:
         nums.sort()
         return max(nums[i] + nums[len(nums) - 1 - i] for i in range(len(nums) // 2))
+s = Solution()
+print(s.minPairSum([3,5,2,3]))  # Output: 7
+print(s.minPairSum([3,5,4,2,4,6]))  # Output: 8
