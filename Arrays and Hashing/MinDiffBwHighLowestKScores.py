@@ -33,3 +33,6 @@ class Solution:
         for i in range(len(nums) - k + 1):
             min_diff = min(min_diff, nums[i + k - 1] - nums[i])
         return min_diff
+s = Solution()
+print(s.minimumDifference([90], 1))  # Output: 0
+print(s.minimumDifference([9,4,1,7], 2))  # Output: 2
