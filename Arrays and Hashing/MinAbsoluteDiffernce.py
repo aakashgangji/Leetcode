@@ -45,3 +45,7 @@ class Solution:
 #         arr.sort()
 #         mi = min(b - a for a, b in pairwise(arr))
 #         return [[a, b] for a, b in pairwise(arr) if b - a == mi]
+s = Solution()
+print(s.minimumAbsDifference([4,2,1,3]))  # Output: [[1,2],[2,3],[3,4]]
+print(s.minimumAbsDifference([1,3,6,10,15]))  # Output: [[1,3]]
+print(s.minimumAbsDifference([3,8,-10,23,19,-4,-14,27]))  # Output: [[-14,-10],[19,23],[23,27]]
