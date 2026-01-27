@@ -57,3 +57,6 @@ class Solution:
                     dist[y] = new_dist                                 
                     heapq.heappush(heap, (new_dist, y))                 
         return -1 
+S=Solution()
+print(S.minCost(4, [[0,1,3],[3,1,1],[2,3,4],[0,2,2]]))  #5
+print(S.minCost(4, [[0,2,1],[2,1,1],[1,3,1],[2,3,3]]))  #3
