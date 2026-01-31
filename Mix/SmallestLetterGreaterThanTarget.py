@@ -25,3 +25,7 @@ class Solution:
             if ch > target:
                 return ch
         return letters[0]
+S=Solution()
+print(S.nextGreatestLetter(["c","f","j"], "a"))  # Output: "c"
+print(S.nextGreatestLetter(["c","f","j"], "c"))  # Output: "f"
+print(S.nextGreatestLetter(["x","x","y","y"], "z"))  # Output: "x"
