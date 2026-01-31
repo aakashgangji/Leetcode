@@ -19,3 +19,9 @@ Example 3:
 Input: letters = ["x","x","y","y"], target = "z"
 Output: "x"
 Explanation: There are no characters in letters that is lexicographically greater than 'z' so we return letters[0].'''
+class Solution:
+    def nextGreatestLetter(self, letters: List[str], target: str) -> str:
+        for ch in letters:
+            if ch > target:
+                return ch
+        return letters[0]
