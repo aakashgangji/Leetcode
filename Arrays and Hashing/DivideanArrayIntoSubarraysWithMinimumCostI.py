@@ -30,17 +30,19 @@ Explanation: The best possible way to form 3 subarrays is: [10,3], [1], and [1] 
 It can be shown that 12 is the minimum cost achievable.
 """
 class Solution:
-    def minimumCost(self, nums: List[int]) -> int:
-        n = len(nums)
-        dp = [[float('inf')] * 4 for _ in range(n + 1)]
-        dp[0][0] = 0
+  def minimumCost(self, nums: list[int]) -> int:
+    MAX = 50
+    min1 = MAX
+    min2 = MAX
 
-        for i in range(1, n + 1):
-            for j in range(1, 4):
-                for k in range(i):
-                    dp[i][j] = min(dp[i][j], dp[k][j - 1] + nums[k])
+    for i in range(1, len(nums)):
+      if nums[i] < min1:
+        min2 = min1
+        min1 = nums[i]
+      elif nums[i] < min2:
+        min2 = nums[i]
 
-        return dp[n][3]
+    return nums[0] + min1 + min2
 S=Solution()
 print(S.minimumCost([1,2,3,12]))  # Output: 6
 print(S.minimumCost([5,4,3]))     # Output: 12
