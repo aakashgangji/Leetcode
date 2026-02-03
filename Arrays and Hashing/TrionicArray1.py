@@ -32,3 +32,33 @@ Explanation:
 
 There is no way to pick p and q to form the required three segments.
 """
+class Solution:
+    def isTrionic(self, nums: List[int]) -> bool:
+        n = len(nums)
+        if n < 3:
+            return False
+        
+        i = 0
+        
+        # Find the peak of the first increasing sequence
+        while i + 1 < n and nums[i] < nums[i + 1]:
+            i += 1
+        
+        # Peak cannot be at the start or end
+        if i == 0 or i == n - 1:
+            return False
+        
+        # Find the trough of the decreasing sequence
+        j = i
+        while j + 1 < n and nums[j] > nums[j + 1]:
+            j += 1
+        
+        # Trough cannot be at the end
+        if j == n - 1:
+            return False
+        
+        # Check for the final increasing sequence
+        while j + 1 < n and nums[j] < nums[j + 1]:
+            j += 1
+        
+        return j == n - 1
