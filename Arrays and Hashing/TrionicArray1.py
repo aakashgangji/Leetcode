@@ -62,3 +62,6 @@ class Solution:
             j += 1
         
         return j == n - 1
+S = Solution()
+print(S.isTrionic([1,3,5,4,2,6])) # Output: true
+print(S.isTrionic([2,1,3]))     # Output: false
