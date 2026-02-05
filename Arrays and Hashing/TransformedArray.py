@@ -50,3 +50,6 @@ class Solution:
                 result[i] = nums[i]
         
         return result
+S=Solution()
+print(S.constructTransformedArray([3,-2,1,1]))
+print(S.constructTransformedArray([-1,4,-1]))
