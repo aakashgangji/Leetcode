@@ -54,3 +54,7 @@ class Solution:
             max_balanced_length = max(max_balanced_length, current_balanced_length)
         
         return n - max_balanced_length
+S=Solution()
+print(S.minRemoval([2,1,5], 2)) # Output: 1
+print(S.minRemoval([1,6,2,9], 3)) # Output: 2
+print(S.minRemoval([4,6], 2)) # Output: 0
