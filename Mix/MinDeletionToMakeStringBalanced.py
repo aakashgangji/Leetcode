@@ -34,3 +34,6 @@ class Solution:
         countB += 1
 
     return dp
+s=Solution()
+print(s.minimumDeletions("aababbab"))  # 2
+print(s.minimumDeletions("bbaaaaabb"))  # 2
