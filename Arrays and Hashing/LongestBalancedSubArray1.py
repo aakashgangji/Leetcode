@@ -54,3 +54,7 @@ class Solution:
                     ans = max(ans, j - i + 1)
 
         return ans
+s=Solution()
+print(s.longestBalanced([2,5,4,3]))
+print(s.longestBalanced([3,2,2,5,4]))
+print(s.longestBalanced([1,2,3,2]))
