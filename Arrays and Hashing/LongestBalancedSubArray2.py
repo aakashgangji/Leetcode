@@ -132,3 +132,7 @@ class Solution:
                 max_len = max(max_len, r - l_opt + 1)
                 
         return max_len
+s=Solution()
+print(s.longestBalanced([2,5,4,3]))
+print(s.longestBalanced([3,2,2,5,4]))
+print(s.longestBalanced([1,2,3,2])) 
