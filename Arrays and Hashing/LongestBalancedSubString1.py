@@ -50,3 +50,7 @@ class Solution:
                     ans = max(ans, j - i + 1)
 
         return ans
+s=Solution()
+print(s.longestBalanced("abbac"))
+print(s.longestBalanced("zzabccy"))
+print(s.longestBalanced("aba"))
