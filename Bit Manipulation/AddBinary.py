@@ -27,3 +27,6 @@ class Solution:
             res=str(sum%2)+res
             carry=sum//2
         return res
+s=Solution()
+print(s.addBinary("11", "1"))
+print(s.addBinary("1010", "1011"))
