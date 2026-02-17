@@ -30,3 +30,6 @@ class Solution:
                 if (bin(i)+bin(j)).count("1")==turnedOn:
                     res.append(str(i)+":"+str(j).zfill(2))
         return res
+s=Solution()
+print(s.readBinaryWatch(1))
+print(s.readBinaryWatch(9))
