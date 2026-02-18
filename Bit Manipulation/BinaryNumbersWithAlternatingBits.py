@@ -25,3 +25,7 @@ class Solution:
             if s[i]==s[i-1]:
                 return False
         return True
+s=Solution()
+print(s.hasAlternatingBits(5))
+print(s.hasAlternatingBits(7))
+print(s.hasAlternatingBits(11))
