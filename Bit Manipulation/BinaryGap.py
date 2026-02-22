@@ -35,3 +35,7 @@ class Solution:
                     max_dist=max(max_dist,i-prev)
                 prev=i
         return max_dist
+s=Solution()
+print(s.binaryGap(22))
+print(s.binaryGap(8))
+print(s.binaryGap(5))   
