@@ -34,5 +34,7 @@ class Solution:
             if not node.left and not node.right:
                 return path
             return dfs(node.left, path) + dfs(node.right, path)
-
         return dfs(root, 0)
+S=Solution()
+print(S.sumRootToLeaf([1,0,1,0,1,0,1]))
+print(S.sumRootToLeaf([0]))
