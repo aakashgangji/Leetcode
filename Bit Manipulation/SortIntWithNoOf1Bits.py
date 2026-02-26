@@ -22,3 +22,6 @@ Explantion: All integers have 1 bit in the binary representation, you should jus
 class Solution:
     def sortByBits(self, arr: List[int]) -> List[int]:
         return sorted(arr, key=lambda x: (bin(x).count('1'), x))
+s=Solution()
+arr = [0,1,2,3,4,5,6,7,8]
+print(s.sortByBits(arr))
