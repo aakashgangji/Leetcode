@@ -64,3 +64,7 @@ class Solution:
                     t.remove(t[j])
             ans += 1
         return -1
+s= Solution()
+print(s.minOperations("110", 1))
+print(s.minOperations("0101", 3))
+print(s.minOperations("101", 2))
