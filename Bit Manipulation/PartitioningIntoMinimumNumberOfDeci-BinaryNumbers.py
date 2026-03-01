@@ -21,3 +21,8 @@ Output: 9
 class Solution:
   def minPartitions(self, n: str) -> int:
     return int(max(n))
+# Example usage:
+solution = Solution()
+print(solution.minPartitions("32"))  # Output: 3
+print(solution.minPartitions("82734"))  # Output: 8
+print(solution.minPartitions("27346209830709182346"))  # Output: 9  
