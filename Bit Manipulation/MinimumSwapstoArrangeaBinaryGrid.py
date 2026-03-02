@@ -57,3 +57,8 @@ class Solution:
                 swaps += 1
 
         return swaps
+# Example usage:
+solution = Solution()
+print(solution.minSwaps([[0,0,1],[1,1,0],[1,0,0]]))  # Output: 3
+print(solution.minSwaps([[0,1,1,0],[0,1,1,0],[0,1,1,0],[0,1,1,0]]))  # Output: -1
+print(solution.minSwaps([[1,0,0],[1,1,0],[1,1,1]]))  # Output: 0    
