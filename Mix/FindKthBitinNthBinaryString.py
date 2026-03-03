@@ -37,3 +37,7 @@ class Solution:
     if k < midIndex:
       return self.findKthBit(n - 1, k)
     return '1' if self.findKthBit(n - 1, midIndex * 2 - k) == '0' else '0'
+# Example usage:
+solution = Solution()
+print(solution.findKthBit(3, 1))  # Output: "0"
+print(solution.findKthBit(4, 11)) # Output: "1"
