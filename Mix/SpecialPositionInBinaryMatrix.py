@@ -35,3 +35,7 @@ class Solution:
                     if isSpecial:
                         count += 1
         return count
+# Example usage:
+solution = Solution()
+print(solution.numSpecial([[1,0,0],[0,0,1],[1,0,0]]))  # Output: 1
+print(solution.numSpecial([[1,0,0],[0,1,0],[0,0,1]]))  # Output: 3  
