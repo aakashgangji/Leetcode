@@ -37,3 +37,8 @@ class Solution:
                 count2 += 1
 
         return min(count1, count2)
+# Example usage:
+solution = Solution()
+print(solution.minOperations("0100"))  # Output: 1
+print(solution.minOperations("10"))    # Output: 0
+print(solution.minOperations("1111"))  # Output: 2
