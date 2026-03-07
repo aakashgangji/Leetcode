@@ -53,3 +53,7 @@ class Solution:
             rstart_0 = '1' if rstart_0 == '0' else '0'
 
         return res
+s=Solution()
+print(s.minFlips("111000"))
+print(s.minFlips("010"))
+print(s.minFlips("1110"))
