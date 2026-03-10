@@ -68,3 +68,7 @@ class Solution:
             (dp[i][j - limit - 1][0] if j - limit >= 1 else 0) + MOD) % MOD
 
     return (dp[zero][one][0] + dp[zero][one][1]) % MOD
+S=Solution()
+print(S.numberOfStableArrays(1, 1, 2))
+print(S.numberOfStableArrays(1, 2, 1))
+print(S.numberOfStableArrays(3, 3, 2))  
