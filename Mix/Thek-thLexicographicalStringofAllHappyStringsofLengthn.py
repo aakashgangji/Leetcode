@@ -38,3 +38,7 @@ class Solution:
         q.append(u + nextLetter)
 
     return '' if len(q) < k else q[k - 1]
+s=Solution()
+print(s.getHappyString(1, 3))
+print(s.getHappyString(1, 4))
+print(s.getHappyString(3, 9))
