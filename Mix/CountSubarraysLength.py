@@ -18,3 +18,6 @@ class Solution:
             if (nums[l]+nums[l+2])==nums[l+1]/2:
                 count+=1
         return count
+S=Solution()
+print(S.countSubarrays([1,2,1,4,1]))    
+print(S.countSubarrays([1,1,1]))
