@@ -99,6 +99,17 @@ class Router:
         right = bisect.bisect_right(timestamps, endTime)
         return right - left
 
+s=Solution()
+router = Router(3)
+print(router.addPacket(1, 4, 90))  # True
+print(router.addPacket(2, 5, 90))  # True
+print(router.addPacket(1, 4, 90))  # False (duplicate)
+print(router.addPacket(3, 5, 95))  # True
+print(router.addPacket(4, 5, 105)) # True (removes [1, 4, 90])
+print(router.forwardPacket())        # [2, 5, 90]
+print(router.addPacket(5, 2, 110)) # True
+print(router.getCount(5, 100, 110)) # 1 ([4, 5, 105])
+
 
 
 # Your Router object will be instantiated and called as such:
