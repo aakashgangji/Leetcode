@@ -30,9 +30,15 @@ Explanation:
 
 The diagram above shows the grid before and after the transformation.
 """
+from ast import List
+
+
 class Solution:
     def reverseSubmatrix(self, grid: List[List[int]], x: int, y: int, k: int) -> List[List[int]]:
         for i in range(k // 2):
             for j in range(k):
                 grid[x + i][y + j], grid[x + k - 1 - i][y + j] = grid[x + k - 1 - i][y + j], grid[x + i][y + j]
         return grid
+S=Solution()
+print(S.reverseSubmatrix([[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]], 1, 0, 3))
+print(S.reverseSubmatrix([[3,4,2,3],[2,3,4,2]], 0, 2, 2))   
