@@ -39,3 +39,6 @@ class Solution:
                 p[i][j] = p[i][j] * pre % mod
                 pre = pre * grid[i][j] % mod
         return p
+S=Solution()
+print(S.constructProductMatrix([[1,2],[3,4]]))
+print(S.constructProductMatrix([[12345],[2],[1]]))  
