@@ -98,3 +98,7 @@ class Solution:
                     max_distance_squared = max(max_distance_squared, 
                                               current_x * current_x + current_y * current_y)
         return max_distance_squared
+s=Solution()
+print(s.robotSim([4,-1,3], []))
+print(s.robotSim([4,-1,4,-2,4], [[2,4]]))
+print(s.robotSim([6,-1,-1,6], [[0,0]]))
