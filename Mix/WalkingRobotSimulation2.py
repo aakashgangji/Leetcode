@@ -71,3 +71,11 @@ class Robot:
 
     def getDir(self) -> str:
         return "East" if self.isOrigin else self.pos[self.i][1]
+
+S=Robot(6, 3)
+S.step(2)
+S.step(2)
+print(S.getPos())
+print(S.getDir())
+S.step(2)
+S.step(1)   
